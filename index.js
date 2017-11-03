@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const token = "Le token du ";
+const token = "Le token du bot";
 var prefix = "!";
 var mention = "la mention du bot"
 
@@ -16,13 +16,8 @@ message.channel.send('5/5');}});
 
 client.on('message', message => {
 if (message.content.startsWith(prefix + "ping")) {
-var now = require('performance-now');
-var startTime = now();
-message.channel.send("pong = wait...")
-.then(message => {
-var endTime = now();
-return message.edit("**pong :ping_pong: = " + Math.round(endTime - startTime) + " ms.**");
-}).catch(console.error);
-}});
+message.channel.send("pong = wait...").then(msg => msg.edit(`**pong :ping_pong: = ${Date.now() - startTime}**`);
+}
+});
 
 client.login(token)
