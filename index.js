@@ -16,6 +16,7 @@ message.channel.send('5/5');}});
 
 client.on('message', message => {
 if (message.content.startsWith(prefix + "ping")) {
+  let startTime = Date.now();
 message.channel.send("pong = wait...").then(msg => msg.edit(`**pong :ping_pong: = ${Date.now() - startTime}**`);
 }
 });
