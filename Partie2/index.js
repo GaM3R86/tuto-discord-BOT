@@ -44,7 +44,8 @@ var serverNumber = client.guilds.size;
     }
   }
 
-
+ let startTime = Date.now();
+message.channel.send("pong = wait...").then(msg => msg.edit(`**pong :ping_pong: = ${Date.now() - startTime}**`));
 const fs = require("fs");
 var msg = message;
 
